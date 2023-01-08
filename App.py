@@ -40,6 +40,7 @@ def takeCommand():
     r=sr.Recognizer()
     with sr.Microphone() as source:
         print('Listening...')
+        speak('Listening')
         r.pause_threshold = 1
         audio=r.listen(source)
 
@@ -69,29 +70,36 @@ if __name__=="__main__":
             results = wikipedia.summary(query, sentences=1) 
             speak("According to Wikipedia")
             speak(results)
+            continue
 
         elif 'open youtube' in query:
             speak('Opening Youtube')
             webbrowser.open("https://www.youtube.com/")
+            continue
         
         elif 'open google' in query:
             speak('Opening Google')
             webbrowser.open("https://www.google.com/")
+            continue
 
         elif 'news' in query:
             speak('Todays news')
             webbrowser.open("https://www.ndtv.com/latest#pfrom=home-ndtv_mainnavgation")    
+            continue
 
         elif 'open netflix' in query:
             speak('Opening Netflix')
             webbrowser.open("https://www.netflix.com/in/")
+            continue
 
         elif 'open youtube music'  in query:
             speak('Opening Youtube Music')
             webbrowser.open('https://music.youtube.com/')
+            continue
 
         elif ('hello' or 'hi' or 'sup' or 'whatsup' or 'hey') in query:
             speak('Hi, how are you')    
+            continue
 
         elif 'good' in query:
             speak('Happy to hear that')    
@@ -102,29 +110,34 @@ if __name__=="__main__":
 
         elif 'spotify' in query:
             webbrowser.open('https://open.spotify.com/')   
+            continue 
 
         elif 'time' in query:
             Time = datetime.datetime.now().strftime("%H:%M:%S")    
             speak(f"Sir, the time is {Time}")         
+            continue
 
         elif ('about' or 'intro' or 'introduction') in query:
             speak("I'm Nabeel made voice assistant and can perform various tasks. The tasks which can be performed are opening popular webpages like google, youtube, youtube music, etc, Get information from wikipedia and ask me the date and time. This voice assistant script can only work on mac. However, Nabeel has created another version of me which can run on windows too with same functionality.")           
+            continue
 
         elif 'date' in query:
             date=datetime.datetime.now()
             speak(f"Sir, the year is {date.year} and the month is {date.month} and the day is {date.day}")
+            continue
 
         elif 'wait' in query:
             speak('Sorry')
             time.sleep(1)
 
-        elif ('Hollywood song' or 'Hollywood songs' or 'Hollywood music' or 'music' or 'songs') in query:
+        elif ('music' or 'hollywood music') in query:
             speak('Playing Songs')
-            webbrowser.open('https://music.youtube.com/watch?v=H3yKzgY2J0Q&list=RDCLAK5uy_nTbyVypdXPQd00z15bTWjZr7pG-26yyQ4')
+            webbrowser.open('https://music.youtube.com/watch?v=EGikhmjTSZI&list=PLhsz9CILh357zA1yMT-K5T9ZTNEU6Fl6n')
+            continue
 
         elif ('bollywood songs' or 'bollywood music') in query:
             speak("Playing Bollywood music")
             webbrowser.open('https://music.youtube.com/watch?v=jpYkoa-uE_c&list=RDCLAK5uy_n9Fbdw7e6ap-98_A-8JYBmPv64v-Uaq1g')
-            
+            continue
 
 
