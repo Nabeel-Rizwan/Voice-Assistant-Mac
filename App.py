@@ -73,7 +73,7 @@ if __name__=="__main__":
         elif 'open youtube' in query:
             speak('Opening Youtube')
             webbrowser.open("https://www.youtube.com/")
-
+        
         elif 'open google' in query:
             speak('Opening Google')
             webbrowser.open("https://www.google.com/")
@@ -101,7 +101,7 @@ if __name__=="__main__":
             quit()
 
         elif 'spotify' in query:
-            webbrowser.open('https://open.spotify.com/')    
+            webbrowser.open('https://open.spotify.com/')   
 
         elif 'time' in query:
             Time = datetime.datetime.now().strftime("%H:%M:%S")    
@@ -118,13 +118,13 @@ if __name__=="__main__":
             speak('Sorry')
             time.sleep(1)
 
-        elif ('Hollywood song' or 'Hollywood songs' or 'Hollywood music' or 'music' or 'songs'):
+        elif ('Hollywood song' or 'Hollywood songs' or 'Hollywood music' or 'music' or 'songs') in query:
             speak('Playing Songs')
             webbrowser.open('https://music.youtube.com/watch?v=H3yKzgY2J0Q&list=RDCLAK5uy_nTbyVypdXPQd00z15bTWjZr7pG-26yyQ4')
 
         elif ('bollywood songs' or 'bollywood music') in query:
             speak("Playing Bollywood music")
             webbrowser.open('https://music.youtube.com/watch?v=jpYkoa-uE_c&list=RDCLAK5uy_n9Fbdw7e6ap-98_A-8JYBmPv64v-Uaq1g')
-
+            
 
 
